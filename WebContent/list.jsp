@@ -9,8 +9,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>List</title>
+<script>
+	fnAlert(arg){
+		if(arg == 1){
+			alert("가입을 축하드립니다.")
+		}else if(arg == 2){
+			alert("login에 성공하였습니다.")
+		}else if(arg == 3){
+			alert("정보수정에 성공하였습니다.")
+		}else if(arg == 4){
+			alert("정보수정에 실패하였습니다.")
+		}
+	}
+</script>
 </head>
 <body>
+	<script type="text/javascript">
+		fnAlert(<%= request.getAttribute("alert") %>)
+	</script>
+	
+	<!-- 현재 페이지에 로그인 상태를 보여주기 위한 userStatus.jsp를 include함. <@page include>를 쓸경우 정적으로 페이지 소스만 복사됨 그래서 한번에 컴파일 됨  -->
+	<%@include file = "userStatus.jsp" %>
+
 	<table width="500" cellpadding="0" cellspacing="0" border="1">
 		<tr>
 			<td>ID</td>
